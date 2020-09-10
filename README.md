@@ -1,5 +1,10 @@
 # Banxe NestJS boilerplate application
 
+**Branches**:
+- **dev: Only NestJS**
+- typeorm+postgres: NestJS + PostgreSQL + TypeORM
+- mongoose+mongo: NestJS + MongoDB + Mongoose
+---
 * Node v12.17.0
 * [Auto semantic versioning](https://semver.org/)
 * [Changelog generation](https://github.com/conventional-changelog/standard-version)
