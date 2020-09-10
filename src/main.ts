@@ -8,8 +8,10 @@ const logger = new Logger('AppBootstrap')
 async function bootstrap() {
     const app = await NestFactory.create(AppModule)
 
-    const port = app.get(ConfigService).get('PORT') || 3000
-    const hostname = app.get(ConfigService).get('HOST') || 'localhost'
+    const configService = app.get(ConfigService)
+
+    const port = configService.get('PORT') || 3000
+    const hostname = configService.get('HOST') || 'localhost'
 
     await app.listen(port, hostname, () =>
         logger.log(`Server running at ${hostname}:${port}`),
