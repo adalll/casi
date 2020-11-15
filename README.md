@@ -12,6 +12,14 @@
 * Precommit prettier
 * VSCode debug launcher
 
+## Code-conventions
+
+Please read about [conventions](https://gitlab.i-link.pro/banxe/banxe-boilerplate/-/wikis/Conventions) that should be followed during development
+
+Other rules already configured in eslint and prettier
+
+If you want to propose some change - you can make an [issue](https://gitlab.i-link.pro/banxe/banxe-boilerplate/-/issues/new?issue%5Bassignee_id%5D=&issue%5Bmilestone_id%5D=)
+
 ## Installation
 
 ```bash
