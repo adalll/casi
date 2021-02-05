@@ -101,7 +101,7 @@ module.exports = {
       }
     ],
     "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^(_|type)" }],
-    "@typescript-eslint/return-await": "error",
+    "@typescript-eslint/return-await": ["error", "always"],
     "@typescript-eslint/semi": ["error", "never"],
   },
   "ignorePatterns": [
