@@ -4,7 +4,10 @@ module.exports = {
     project: 'tsconfig.json',
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint/eslint-plugin'],
+  plugins: [
+    '@typescript-eslint/eslint-plugin',
+    'no-null'
+  ],
   extends: [
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
@@ -26,6 +29,7 @@ module.exports = {
     'no-empty-pattern': "error",
     "no-magic-numbers": "off",
     "no-unused-vars": "off",
+    "no-null/no-null": "error",
     "semi": "off",
     "space-before-blocks": "error",
     '@typescript-eslint/array-type': 'error',
