@@ -30,6 +30,7 @@ module.exports = {
     "no-magic-numbers": "off",
     "no-unused-vars": "off",
     "no-null/no-null": "error",
+    "object-shorthand": ["error", "always"],
     "semi": "off",
     "space-before-blocks": "error",
     '@typescript-eslint/array-type': 'error',
