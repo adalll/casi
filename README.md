@@ -9,6 +9,7 @@
 * [Auto semantic versioning](https://semver.org/)
 * [Changelog generation](https://github.com/conventional-changelog/standard-version)
 * [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0-beta.3/)
+* [Graphql-js fork](https://gitlab.i-link.pro/i-link-public/graphql-js) for schema-print
 * Precommit prettier
 * VSCode debug launcher
 
