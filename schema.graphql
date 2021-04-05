@@ -1,0 +1,141 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Mutation {
+  """Get deposit address or create if it's not exist"""
+  getDepositAddress(input: GetDepositAddressInput!): Wallet!
+
+  """Create withdraw request"""
+  createWithdrawRequest(input: CreateWithdrawRequestInput!): WithdrawRequest!
+}
+
+type Query {
+  """Get deposit address or create if it's not exist"""
+  getDepositAddress(input: GetDepositAddressInput!): Wallet!
+
+  """Create withdraw request"""
+  createWithdrawRequest(input: CreateWithdrawRequestInput!): WithdrawRequest!
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Timestamps {
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+
+
+
+
+type PolkadotStake {
+  amount: BigNumber!
+  eraId: Float!
+  rewards: BigNumber!
+  slashes: BigNumber!
+  comission: BigNumber!
+  stakePercentage: BigNumber!
+}
+
+"""BigNumber custom scalar type"""
+scalar BigNumber
+
+type Transaction {
+  address: String!
+  blockchain: Blockchain!
+  extrinsicHash: String
+  status: TransactionStatus!
+  method: TransactionMethodEnum!
+  amount: BigNumber
+  from: String
+  to: String
+  fee: BigNumber
+  createdAt: DateTime!
+}
+
+enum Blockchain {
+  DOT
+}
+
+enum TransactionStatus {
+  CREATED
+  SIGNED
+  SENT
+  FAILED
+  PENDING
+  CONFIRMED
+}
+
+enum TransactionMethodEnum {
+  TRANSFER
+  TRANSFER_KEEP_ALIVE
+  NOMINATE
+  BOND
+  BOND_EXTRA_AMOUNT
+  UNBOND_AMOUNT
+  WITHDRAW_UNBONDED
+}
+
+type WithdrawRequest {
+  amount: BigNumber!
+  blockchain: Blockchain!
+  status: WithdrawRequestStatus!
+  destinationAddress: String!
+  fee: BigNumber!
+  cancelData: String
+}
+
+enum WithdrawRequestStatus {
+  CREATED
+  UNBONDING
+  PENDING
+  WITHDRAWN
+  CANCELED
+}
+
+type Wallet {
+  address: String!
+  blockchain: Blockchain!
+  stakedBalance: BigNumber!
+  holdBalance: BigNumber!
+  unbondingBalance: BigNumber!
+  incomingBalance: BigNumber!
+  outgoingBalance: BigNumber!
+  stakePercentage: BigNumber!
+  transactions: [Transaction]
+  stakes: [PolkadotStake]
+  withdrawRequests: [WithdrawRequest]
+}
+
+
+
+input GetDepositAddressInput {
+  blockchain: Blockchain!
+}
+
+input CreateWithdrawRequestInput {
+  blockchain: Blockchain!
+  amount: BigNumber!
+  destinationAddress: String!
+}
